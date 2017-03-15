@@ -1,7 +1,10 @@
+import os
 def display(DataList):
     rank = DataList[0]
+    print('---------------------------')
     for x in range(0,rank):
         print(DataList[x+1])
+    print('---------------------------')
 
 def format(DataList):
     rank = int(DataList[0])
@@ -40,13 +43,12 @@ def backSubstitutionb(DataList):
             temp = 0
             for xx in range(0,x):
                 temp = temp + DataList[rank-x][rank-xx-1]
-            print(temp)
             answer.insert(0,(DataList[rank-x][rank]-temp)/DataList[rank-x][rank-x-1])
             for xx in range(0,rank-1-x):
                 DataList[xx+1][rank-x-1] = DataList[xx+1][rank-1-x]*answer[0]
     return answer
 
-gaussDataList = format(open('gaussdata.txt').readlines())
-# gaussDataList = format(open('gaussdata-1.txt').readlines())
+gaussDataList = format(open('数值计算/gaussdata.txt').readlines())
+# gaussDataList = format(open('数值计算/gaussdata-1.txt').readlines())
 gaussDataList = elimination(gaussDataList)
 print(backSubstitutionb(gaussDataList))
