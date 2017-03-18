@@ -58,4 +58,4 @@ dataRaw = [
 dataComEli = completeMain(dataRaw)
 ans = backSubstitutionb(dataComEli[0])
 print(ans)
-print(dataComEli[1])
+print(dataComEli[1][:-1])
