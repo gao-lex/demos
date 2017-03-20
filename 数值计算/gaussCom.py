@@ -1,9 +1,9 @@
 import numpy as np
 
 def exchange(dataMatrix, dataRow, dataLine, dataMain):
-    dataMatrix[[dataMain, dataRow]] = dataMatrix[[dataRow, dataMain]]  # 花式索引，转换行
+    dataMatrix[[dataMain, dataRow+dataMain]] = dataMatrix[[dataRow+dataMain, dataMain]]  # 花式索引，转换行
     dataTMatrix = dataMatrix.T.copy()  # 花式索引，转换列
-    dataTMatrix[[dataMain, dataLine]] = dataTMatrix[[dataLine, dataMain]]
+    dataTMatrix[[dataMain, dataLine+dataMain]] = dataTMatrix[[dataLine+dataMain, dataMain]]
     dataMatrix = dataTMatrix.T
     return dataMatrix
 
@@ -49,10 +49,11 @@ def backSubstitutionb(dataMatrix):
     return answer
 
 dataRaw = [
-    3, 
-    [0.001, 2.000, 3.000, 1.000], 
-    [-1.000, 3.712, 4.623, 2.000],
-    [-2.000, 1.072, 5.643, 3.000]
+    4, 
+    [0.03, 59.14, 3, 1,59.17], 
+    [5.291, -6.130, -1, 2,46.78],
+    [11.2, 9, 5, 2,1],
+    [1,2,1,1,2]
 ]
 
 dataComEli = completeMain(dataRaw)
