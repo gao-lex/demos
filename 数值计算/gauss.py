@@ -48,7 +48,7 @@ def backSubstitutionb(DataList):
                 DataList[xx+1][rank-x-1] = DataList[xx+1][rank-1-x]*answer[0]
     return answer
 
-gaussDataList = format(open('数值计算/gaussdata.txt').readlines())
-# gaussDataList = format(open('数值计算/gaussdata-1.txt').readlines())
+#gaussDataList = format(open('gaussdata.txt').readlines())
+gaussDataList = format(open('gaussdata-1.txt').readlines())
 gaussDataList = elimination(gaussDataList)
 print(backSubstitutionb(gaussDataList))
