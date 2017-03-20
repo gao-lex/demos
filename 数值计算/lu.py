@@ -6,12 +6,7 @@ dataRaw = [
     [4,8,3,6,-7],
     [12,6,11,20,-3]
 ]
-# dataRaw = [
-#     [,,,,],
-#     [,,,,],
-#     [,,,,],
-#     [,,,,]
-# ]
+
 matrixRaw = np.array(dataRaw)
 matrix = matrixRaw[:matrixRaw.shape[0],:matrixRaw.shape[0]]
 bMatrix = matrixRaw[:matrixRaw.shape[0],matrixRaw.shape[0]:]
