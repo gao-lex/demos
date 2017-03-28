@@ -1,3 +1,4 @@
+# lu分解法
 import numpy as np
 
 dataRaw = [

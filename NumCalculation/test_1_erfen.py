@@ -7,14 +7,22 @@ def func(x):
 a = 1.0
 b = 2.0
 loop = 1
-
 while (b-a)/2>0.5*math.pow(10,-5):
     xn = (a+b)/2
-    print("a="+str(a)+'\n'+"b="+str(b)+'\n'+"xn="+str(xn)+'\n'+"n="+str(loop)+'\n'+"f(xn)"+str(func(xn)))
+    print("a="+str(a)+' '+"b="+str(b)+' '+"xn="+str(xn)+' '+"n="+str(loop)+' '+"f(xn)"+str(func(xn)))
     if func(xn) == 0:
         os._exit()
     elif func(a)*func(xn) < 0:
         b = xn
     else:
         a = xn
-    loop=loop+1
+    loop = loop +1
+
+xn = (a+b)/2
+print("a="+str(a)+' '+"b="+str(b)+' '+"xn="+str(xn)+' '+"n="+str(loop)+' '+"f(xn)"+str(func(xn)))
+if func(xn) == 0:
+   os._exit()
+elif func(a)*func(xn) < 0:
+    b = xn
+else:
+    a = xn

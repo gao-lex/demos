@@ -1,4 +1,4 @@
-import os
+# 高斯消元法
 def display(DataList):
     rank = DataList[0]
     print('---------------------------')

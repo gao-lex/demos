@@ -1,3 +1,4 @@
+# 高斯完全主元素消元法
 import numpy as np
 
 def exchange(dataMatrix, dataRow, dataLine, dataMain):
