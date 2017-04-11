@@ -16,16 +16,18 @@ dataRaw = [
 matrixRaw = np.array(dataRaw)
 ansRaw = np.zeros(matrixRaw.shape[0])# k=0  array([ 0.,  0.,  0.])
 ans = np.zeros(matrixRaw.shape[0])# k=1 array([ 0.,  0.,  0.])
+ans2 = np.zeros(matrixRaw.shape[0])# k=1 array([ 0.,  0.,  0.])
 
 for x in range(0,ansRaw.shape[0]):
     # x(0,3)
     ans[x] = (matrixRaw[x][matrixRaw.shape[1]-1] - np.dot(ansRaw,matrixRaw[x][0:matrixRaw.shape[1]-1]) +matrixRaw[x][x]*ansRaw[x])/matrixRaw[x][x]
-    # ans : array([ 0.72,  0.83,  0.84])
+    ansRaw[x]=ans[x]
+    # ans : array([ 0.72    0.902   1.1644])
 print(ansRaw)
-while (abs(norm(ans)-norm(ansRaw))>0.5*math.pow(10,-5)):
-    ansRaw = ans.copy()
+while ((norm(ansRaw)-norm(ans2))>0.5*math.pow(10,-5)):
+    ans2 = ansRaw.copy()
     print(ansRaw)
     for x in range(0,ansRaw.shape[0]):
         ans[x] = (matrixRaw[x][matrixRaw.shape[1]-1] - np.dot(ansRaw,matrixRaw[x][0:matrixRaw.shape[1]-1]) +matrixRaw[x][x]*ansRaw[x])/matrixRaw[x][x]
-        
+        ansRaw[x]=ans[x]
 print(ans)
